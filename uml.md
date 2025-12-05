@@ -1,4 +1,4 @@
-``` mermaid
+```mermaid
 classDiagram
     direction TB
 
@@ -49,12 +49,12 @@ classDiagram
         +static void guardarVenta(String)
     }
 
-    SistemaCompraVenta --> ArbolProductos
-    SistemaCompraVenta --> Ventas
-    ArbolProductos --> Producto
-    Ventas --> ArbolProductos
-    Ventas --> ArchivoVentas
-    Archivo --> ArbolProductos
-    Archivo --> Producto
-    Producto --> Producto
+    SistemaCompraVenta --> ArbolProductos : usa
+    SistemaCompraVenta --> Ventas : usa
+    ArbolProductos --> Producto : contiene nodos
+    Ventas --> ArbolProductos : consulta / descuenta stock
+    Ventas --> ArchivoVentas : guarda venta
+    Archivo --> ArbolProductos : cargar/guardar
+    Archivo --> Producto : lectura/escritura
+    Producto --> Producto : hijos ABB
 ```
